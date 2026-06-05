@@ -299,6 +299,10 @@ h3 {
   object-fit: cover;
 }
 
+.project-card.featured {
+  grid-column: 1 / -1;
+}
+
 .project-content {
   display: flex;
   flex-direction: column;
