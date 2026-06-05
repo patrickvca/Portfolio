@@ -471,6 +471,16 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .project-card {
+    min-height: 0;
+  }
+
+  .project-card img {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+  }
+
   .contact-band {
     display: grid;
   }
@@ -507,8 +517,12 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .project-content {
+    padding: 22px;
+  }
+
   .project-card img {
-    min-height: 240px;
+    aspect-ratio: 4 / 3;
   }
 
   .contact-band {
