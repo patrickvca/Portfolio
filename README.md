@@ -22,36 +22,6 @@ Aplicações com Python
 Projetos acadêmicos
 Soluções pessoais e profissionais
 Estudos e práticas de programação
-🛠️ Tecnologias utilizadas
-
-As principais tecnologias e ferramentas que utilizo ou estou estudando são:
-
-Python
-HTML
-CSS
-JavaScript
-Git
-GitHub
-Banco de dados
-Automação de processos
-📁 Projetos em destaque
-Automação de processos
-
-Projeto desenvolvido para automatizar tarefas repetitivas, reduzir trabalho manual e aumentar a produtividade em atividades do dia a dia.
-
-Tecnologias utilizadas: Python, automação e lógica de programação.
-
-Aplicativo de controle financeiro pessoal
-
-Aplicação criada para ajudar no controle de finanças pessoais de forma simples e prática, com foco em organização e facilidade de uso.
-
-Tecnologias utilizadas: Desenvolvimento web e lógica de programação.
-
-Site institucional
-
-Projeto de site desenvolvido para apresentar informações profissionais de forma clara, organizada e responsiva.
-
-Tecnologias utilizadas: HTML, CSS e JavaScript.
 
 📚 O que estou aprendendo
 
@@ -62,12 +32,7 @@ Organização e limpeza de código
 Versionamento com Git e GitHub
 Desenvolvimento de interfaces web
 Estruturação de projetos
-Boas práticas de programação
-📌 Aprendizados
-
-Durante o desenvolvimento deste portfólio e dos meus projetos, venho aprimorando minhas habilidades em organização de código, resolução de problemas, documentação e apresentação de projetos no GitHub.
-
-Também venho aprendendo a transformar ideias simples em soluções funcionais, sempre buscando criar projetos com propósito e utilidade prática.
+Chatbot
 
 📫 Contato
 
