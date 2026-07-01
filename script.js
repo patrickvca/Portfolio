@@ -1,50 +1,27 @@
-const tabButtons = document.querySelectorAll(".tab-button");
-const certificateCards = document.querySelectorAll(".certificate-card");
-const modal = document.querySelector(".modal");
-const modalImage = document.querySelector(".modal img");
-const modalClose = document.querySelector(".modal-close");
+const header = document.querySelector(".site-header");
+const navToggle = document.querySelector(".nav-toggle");
+const navLinks = document.querySelectorAll(".site-nav a");
 
-tabButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const filter = button.dataset.filter;
-
-    tabButtons.forEach((item) => item.classList.remove("active"));
-    button.classList.add("active");
-
-    certificateCards.forEach((card) => {
-      const shouldShow = filter === "todos" || card.dataset.category === filter;
-      card.classList.toggle("hidden", !shouldShow);
-    });
-  });
-});
-
-certificateCards.forEach((card) => {
-  card.addEventListener("click", () => {
-    const image = card.dataset.full;
-    const label = card.querySelector("img").alt;
-
-    modalImage.src = image;
-    modalImage.alt = label;
-    modal.classList.add("open");
-    modal.setAttribute("aria-hidden", "false");
-  });
-});
-
-function closeModal() {
-  modal.classList.remove("open");
-  modal.setAttribute("aria-hidden", "true");
-  modalImage.src = "";
+function updateHeaderState() {
+  header.classList.toggle("is-scrolled", window.scrollY > 24);
 }
 
-modalClose.addEventListener("click", closeModal);
-modal.addEventListener("click", (event) => {
-  if (event.target === modal) {
-    closeModal();
-  }
+function closeMenu() {
+  header.classList.remove("menu-open");
+  document.body.classList.remove("nav-open");
+  navToggle.setAttribute("aria-expanded", "false");
+}
+
+updateHeaderState();
+window.addEventListener("scroll", updateHeaderState, { passive: true });
+
+navToggle.addEventListener("click", () => {
+  const isOpen = navToggle.getAttribute("aria-expanded") === "true";
+  header.classList.toggle("menu-open", !isOpen);
+  document.body.classList.toggle("nav-open", !isOpen);
+  navToggle.setAttribute("aria-expanded", String(!isOpen));
 });
 
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && modal.classList.contains("open")) {
-    closeModal();
-  }
+navLinks.forEach((link) => {
+  link.addEventListener("click", closeMenu);
 });
