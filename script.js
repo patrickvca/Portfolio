@@ -48,3 +48,42 @@ document.addEventListener("keydown", (event) => {
     closeModal();
   }
 });
+
+const menuToggle = document.querySelector(".menu-toggle");
+const menuLinks = document.querySelectorAll(".nav-links a");
+const desktopMenu = window.matchMedia("(min-width: 721px)");
+
+function setMenuOpen(isOpen) {
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+  menuToggle.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
+}
+
+function isMenuOpen() {
+  return menuToggle.getAttribute("aria-expanded") === "true";
+}
+
+// Sem JS o botao segue oculto e o menu continua visivel como faixa rolavel.
+menuToggle.hidden = false;
+
+menuToggle.addEventListener("click", () => {
+  setMenuOpen(!isMenuOpen());
+});
+
+menuLinks.forEach((link) => {
+  link.addEventListener("click", () => setMenuOpen(false));
+});
+
+document.addEventListener("click", (event) => {
+  if (isMenuOpen() && !event.target.closest(".site-header")) {
+    setMenuOpen(false);
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && isMenuOpen()) {
+    setMenuOpen(false);
+    menuToggle.focus();
+  }
+});
+
+desktopMenu.addEventListener("change", () => setMenuOpen(false));
