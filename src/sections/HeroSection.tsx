@@ -62,13 +62,13 @@ export default function HeroSection() {
         <Navbar />
       </FadeIn>
 
-      <div className="overflow-hidden">
-        <FadeIn delay={0.15} y={40}>
+      <FadeIn delay={0.15} y={40}>
+        <div className="overflow-hidden">
           <h1 className="hero-heading mt-6 w-full whitespace-nowrap text-center text-[12.4vw] font-black uppercase leading-none tracking-tight sm:mt-4 md:mt-2">
             Oi, sou Patrick
           </h1>
-        </FadeIn>
-      </div>
+        </div>
+      </FadeIn>
 
       <div className="absolute left-1/2 top-1/2 z-10 w-[280px] -translate-x-1/2 -translate-y-1/2 sm:bottom-0 sm:top-auto sm:w-[360px] sm:translate-y-0 md:w-[440px] lg:w-[520px]">
         <FadeIn delay={0.6} y={30}>
